@@ -9,13 +9,13 @@ import java.util.List;
 
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+//@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "categoria")
-public class Categoria {
+public class Categoria extends EntidadeBaseInteger {
 
-    @EqualsAndHashCode.Include
-    @Id
+    /*@EqualsAndHashCode.Include
+    @Id*/
 //    @GeneratedValue(strategy = GenerationType.AUTO)
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     /*@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
@@ -27,11 +27,14 @@ public class Categoria {
                         valueColumnName = "next_val",
                         initialValue = 0,
                         allocationSize = 50)*/
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    /*@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;*/
+
     private String nome;
+
     /*@Column(name = "categoria_pai_id")
     private Integer categoriaPaiId;*/
+
     @ManyToOne
     @JoinColumn(name = "categoria_pai_id") // precisa ser opcional pois a categoria pode ser a raiz
     private Categoria categoriaPai;

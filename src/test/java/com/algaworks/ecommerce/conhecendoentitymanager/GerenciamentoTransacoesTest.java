@@ -29,7 +29,7 @@ public class GerenciamentoTransacoesTest extends EntityManagerTest {
         Pedido pedido = entityManager.find(Pedido.class, 1);
         pedido.setStatus(StatusPedido.PAGO);
 
-        if (pedido.getPagamentoCartao() == null) {
+        if (pedido.getPagamento() == null) {
             throw new RuntimeException("Pedido ainda não foi pago.");
         }
 
