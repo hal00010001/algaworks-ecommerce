@@ -11,7 +11,8 @@ import java.util.List;
 @Setter
 //@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "categoria")
+@Table(name = "categoria", uniqueConstraints = { @UniqueConstraint(name = "unq_nome", columnNames = {"nome"}) },
+indexes = { @Index(name = "idx_nome", columnList = "nome") })
 public class Categoria extends EntidadeBaseInteger {
 
     /*@EqualsAndHashCode.Include
@@ -30,13 +31,14 @@ public class Categoria extends EntidadeBaseInteger {
     /*@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;*/
 
+    @Column(length = 100, nullable = false)
     private String nome;
 
     /*@Column(name = "categoria_pai_id")
     private Integer categoriaPaiId;*/
 
     @ManyToOne
-    @JoinColumn(name = "categoria_pai_id") // precisa ser opcional pois a categoria pode ser a raiz
+    @JoinColumn(name = "categoria_pai_id", foreignKey = @ForeignKey(name = "fk_categoria_categoria_pai")) // precisa ser opcional pois a categoria pode ser a raiz
     private Categoria categoriaPai;
 
     @OneToMany(mappedBy = "categoriaPai")

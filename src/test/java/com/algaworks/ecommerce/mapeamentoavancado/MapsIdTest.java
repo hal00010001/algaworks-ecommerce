@@ -5,6 +5,7 @@ import com.algaworks.ecommerce.model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -17,7 +18,7 @@ public class MapsIdTest extends EntityManagerTest {
         NotaFiscal notaFiscal = new NotaFiscal();
         notaFiscal.setPedido(pedido);
         notaFiscal.setDataEmissao(new Date());
-//        notaFiscal.setXml("<xml/>");
+        notaFiscal.setXml(carregarNotaFiscal());
 
         entityManager.getTransaction().begin();
         entityManager.persist(notaFiscal);
@@ -59,4 +60,17 @@ public class MapsIdTest extends EntityManagerTest {
                 ItemPedido.class, new ItemPedidoId(pedido.getId(), produto.getId()));
         Assertions.assertNotNull(itemPedidoVerificacao);
     }
+
+    public static byte[] carregarNotaFiscal(){
+        return carregarArquivo("/nota-exemplo.xml");
+    }
+
+    private static byte[] carregarArquivo(String nome){
+        try {
+            return SalvandoArquivosTest.class.getResourceAsStream(nome).readAllBytes();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

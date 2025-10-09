@@ -1,10 +1,7 @@
 package com.algaworks.ecommerce.mapeamentoavancado;
 
 import com.algaworks.ecommerce.EntityManagerTest;
-import com.algaworks.ecommerce.model.Cliente;
-import com.algaworks.ecommerce.model.PagamentoCartao;
-import com.algaworks.ecommerce.model.Pedido;
-import com.algaworks.ecommerce.model.StatusPagamento;
+import com.algaworks.ecommerce.model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -44,6 +41,8 @@ public class HerancaTest extends EntityManagerTest {
     public void salvarCliente(){
         Cliente cliente = new Cliente();
         cliente.setNome("Fulana das Couves");
+        cliente.setSexo(SexoCliente.FEMININO);
+        cliente.setCpf("3456");
 
         entityManager.getTransaction().begin();
         entityManager.persist(cliente);

@@ -18,7 +18,7 @@ import java.util.List;
 @Table(name = "pedido")
 public class Pedido extends EntidadeBaseInteger {
 
-    @Column(name = "data_criacao", updatable = false)
+    @Column(name = "data_criacao", updatable = false, nullable = false)
     private LocalDateTime dataCriacao;
 
     @Column(name = "data_ultima_atualizacao", insertable = false)
@@ -29,8 +29,10 @@ public class Pedido extends EntidadeBaseInteger {
     /*@Column(name = "nota_fiscal_id")
     private Integer notaFiscalId;*/
 
+    @Column(nullable = false)
     private BigDecimal total;
 
+    @Column(length = 30, nullable = false)
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
@@ -38,7 +40,7 @@ public class Pedido extends EntidadeBaseInteger {
     private EnderecoEntregaPedido enderecoEntrega;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "cliente_id", nullable = false, foreignKey = @ForeignKey(name = "fk_pedido_cliente"))
     private Cliente cliente;
 
     @OneToMany(mappedBy = "pedido")

@@ -13,7 +13,13 @@
             <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
 
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <!--<property name="jakarta.persistance.schema-generation.create-script-source" value="META-INF/banco-de-dados/script-criacao.sql"/>
+            <property name="jakarta.persistance.schema-generation.drop-script-source" value="META-INF/banco-de-dados/script-remocao.sql"/>-->
             <property name="jakarta.persistence.sql-load-script-source" value="META-INF/banco-de-dados/dados-iniciais.sql"/>
+
+            <property name="jakarta.persistence.schema-generation.scripts.action" value="none"/>
+            <property name="jakarta.persistence.schema-generation.scripts.create-target" value="META-INF/banco-de-dados/script-create-export.sql"/>
+            <property name="jakarta.persistence.schema-generation.scripts.drop-target" value="META-INF/banco-de-dados/script-drop-export.sql"/>
 
 <!--            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect" />-->
 
