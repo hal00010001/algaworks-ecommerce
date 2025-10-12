@@ -39,11 +39,11 @@ public class Pedido extends EntidadeBaseInteger {
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false)//, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "cliente_id", nullable = false, foreignKey = @ForeignKey(name = "fk_pedido_cliente"))
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "pedido")
+    @OneToMany(mappedBy = "pedido") //, cascade = CascadeType.PERSIST, orphanRemoval = true) // A única maneira do orphanRemoval funcionar é colocando o cascade persist //, cascade = CascadeType.REMOVE)
     private List<ItemPedido> itensPedido;
 
     @Column(name = "data_conclusao")
@@ -59,10 +59,21 @@ public class Pedido extends EntidadeBaseInteger {
         return StatusPedido.PAGO.equals(this.status);
     }
 
-    private void calcularTotal(){
+    /*private void calcularTotal(){
         if(this.itensPedido != null){
             this.total = this.itensPedido.stream().map(ItemPedido::getPrecoProduto)
                     .reduce(BigDecimal.ZERO, BigDecimal::add);
+        }
+    }*/
+
+    private void calcularTotal(){
+        if(this.itensPedido != null){
+            this.total = this.itensPedido.stream().map(
+                    i -> new BigDecimal(i.getQuantidade()).multiply(i.getPrecoProduto()))
+                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+        }
+        else {
+            total = BigDecimal.ZERO;
         }
     }
 

@@ -32,7 +32,7 @@ public class Produto extends EntidadeBaseInteger {
 
     private BigDecimal preco;
 
-    @ManyToMany
+    @ManyToMany //(cascade = CascadeType.MERGE)
     @JoinTable(name = "produto_categoria",
             joinColumns = @JoinColumn(name = "produto_id", foreignKey = @ForeignKey(name = "fk_produto_categoria_produto")),
             inverseJoinColumns = @JoinColumn(name = "categoria_id", foreignKey = @ForeignKey(name = "fk_produto_categoria_categoria")))

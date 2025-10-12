@@ -11,8 +11,8 @@ import java.util.List;
 @Setter
 //@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "categoria", uniqueConstraints = { @UniqueConstraint(name = "unq_nome", columnNames = {"nome"}) },
-indexes = { @Index(name = "idx_nome", columnList = "nome") })
+@Table(name = "categoria", uniqueConstraints = { @UniqueConstraint(name = "unq_nome", columnNames = {"nome"}) }) //,
+//indexes = { @Index(name = "idx_nome", columnList = "nome") })
 public class Categoria extends EntidadeBaseInteger {
 
     /*@EqualsAndHashCode.Include

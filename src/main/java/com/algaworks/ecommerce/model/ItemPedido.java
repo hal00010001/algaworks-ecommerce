@@ -43,7 +43,7 @@ public class ItemPedido {
     private Produto produto;*/
 
     @MapsId("pedidoId")
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false) //, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "pedido_id", nullable = false, foreignKey = @ForeignKey(name = "fk_item_pedido_pedido"))
     private Pedido pedido;
 
