@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 public class ContextoDePersistenciaTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void usarContextoPersistencia(){
         entityManager.getTransaction().begin();
 

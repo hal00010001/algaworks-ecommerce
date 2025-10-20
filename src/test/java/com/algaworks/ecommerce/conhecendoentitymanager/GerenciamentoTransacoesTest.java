@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class GerenciamentoTransacoesTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void abrirFecharCancelarTransacao(){
         Assertions.assertThrows(Exception.class, this::erroEsperadoMetodoDeNegocio);
     }

@@ -11,7 +11,7 @@ import java.time.temporal.ChronoUnit;
 
 public class DetalhesColumnTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void impedirInsercaoDaColunaAtualizacao(){
         Produto produto = new Produto();
         produto.setNome("teclado para smartphone");

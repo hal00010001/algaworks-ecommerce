@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class MapsIdTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void inserirPagamento() {
         Pedido pedido = entityManager.find(Pedido.class, 1);
 

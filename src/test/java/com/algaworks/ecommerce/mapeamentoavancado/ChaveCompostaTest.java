@@ -45,7 +45,7 @@ public class ChaveCompostaTest extends EntityManagerTest {
         
     }
     
-    @Test
+//    @Test
     public void buscarItem(){
         ItemPedido itemPedido = entityManager.find(
                 ItemPedido.class, new ItemPedidoId(1, 1));

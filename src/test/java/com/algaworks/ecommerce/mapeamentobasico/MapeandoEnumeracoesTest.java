@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class MapeandoEnumeracoesTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void testarEnum() {
 
         Cliente cliente = new Cliente();

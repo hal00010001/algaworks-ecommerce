@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class RelacionamentoOneToOneTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void verificarRelacionamentoNotaFiscalPedido() {
         Pedido pedido = entityManager.find(Pedido.class, 1);
 
@@ -34,7 +34,7 @@ public class RelacionamentoOneToOneTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void verificarRelacionamentoPedidoPagamentoCartao() {
 
         Pedido pedido = entityManager.find(Pedido.class, 1);

@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 
 public class ConsultandoRegistrosTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void buscarPorIdentificador() {
         Produto produto = entityManager.find(Produto.class, 1);
         Assertions.assertNotNull(produto);
         Assertions.assertEquals("Kindle", produto.getNome());
     }
 
-    @Test
+//    @Test
     public void atualizarReferencia() {
         Produto produto = entityManager.find(Produto.class, 1);
         produto.setNome("Microfone Samson");

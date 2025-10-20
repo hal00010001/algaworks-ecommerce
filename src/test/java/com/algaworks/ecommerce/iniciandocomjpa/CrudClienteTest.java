@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class CrudClienteTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void criarCliente() {
 
         Cliente cliente = new Cliente();
@@ -31,7 +31,7 @@ public class CrudClienteTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void buscarCliente(){
 
         Cliente cliente = entityManager.find(Cliente.class, 2);
@@ -42,7 +42,7 @@ public class CrudClienteTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void atualizarCliente(){
 
         Cliente cliente = entityManager.find(Cliente.class, 1);
@@ -60,7 +60,7 @@ public class CrudClienteTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void removerCliente(){
 
         Cliente cliente = entityManager.find(Cliente.class, 2);

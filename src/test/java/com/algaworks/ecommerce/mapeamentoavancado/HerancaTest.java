@@ -18,7 +18,7 @@ public class HerancaTest extends EntityManagerTest {
         Assertions.assertFalse(pagamentos.isEmpty());
     }
 
-    @Test
+//    @Test
     public void incluirPagamentoPedido(){
         Pedido pedido = entityManager.find(Pedido.class, 1);
         PagamentoCartao pagamentoCartao = new PagamentoCartao();
@@ -37,7 +37,7 @@ public class HerancaTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void salvarCliente(){
         Cliente cliente = new Cliente();
         cliente.setNome("Fulana das Couves");

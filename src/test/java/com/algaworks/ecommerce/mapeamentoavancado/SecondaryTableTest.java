@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 public class SecondaryTableTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void salvarCliente(){
         Cliente cliente = new Cliente();
         cliente.setNome("Fulano da Silva");

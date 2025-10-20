@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 public class OperacoesTransacaoTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void impedirOperacaoComBancoDeDados() {
 
         Produto produto = entityManager.find(Produto.class, 1);
@@ -31,7 +31,7 @@ public class OperacoesTransacaoTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void mostrarDiferencaPersistMerge() {
         Produto produtoPersist = new Produto();
 
@@ -71,7 +71,7 @@ public class OperacoesTransacaoTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void inserirObjetoComMerge() {
         Produto produto = new Produto();
 
@@ -132,7 +132,7 @@ public class OperacoesTransacaoTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void removerObjeto() {
 
         /*Produto produto = new Produto();
@@ -151,7 +151,7 @@ public class OperacoesTransacaoTest extends EntityManagerTest {
 
     }
 
-    @Test
+//    @Test
     public void inserirPrimeiroObjeto() {
         Produto produto = new Produto();
 

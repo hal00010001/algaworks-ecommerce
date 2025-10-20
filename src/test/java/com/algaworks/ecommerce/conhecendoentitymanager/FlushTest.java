@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class FlushTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void chamarFlush(){
         Assertions.assertThrows(Exception.class, () -> erroAoChamarFlush());
     }

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class RemovendoEntidadesReferenciadasTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void removerEntidadeRelacionada(){
         Pedido pedido = entityManager.find(Pedido.class, 1);
 

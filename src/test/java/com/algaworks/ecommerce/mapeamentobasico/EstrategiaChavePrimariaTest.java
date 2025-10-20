@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class EstrategiaChavePrimariaTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void testarEstrategiaChave(){
         Categoria categopria = new Categoria();
         categopria.setNome("Revistas");

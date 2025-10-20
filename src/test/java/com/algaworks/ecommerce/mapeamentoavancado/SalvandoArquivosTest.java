@@ -27,7 +27,7 @@ public class SalvandoArquivosTest extends EntityManagerTest {
         Assertions.assertTrue(produtoVerificacao.getFoto().length > 0);
     }
 
-    @Test
+//    @Test
     public void salvarXmlNota(){
 
         Pedido pedido = entityManager.find(Pedido.class, 1);

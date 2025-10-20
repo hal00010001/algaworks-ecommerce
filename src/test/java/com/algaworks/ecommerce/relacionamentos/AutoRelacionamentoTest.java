@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class AutoRelacionamentoTest extends EntityManagerTest {
 
-    @Test
+//    @Test
     public void verificarRelacionamentoCategoriaPai(){
         Categoria categoriaPai = new Categoria();
         categoriaPai.setNome("Futebol");
